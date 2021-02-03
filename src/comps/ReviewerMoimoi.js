@@ -40,7 +40,7 @@ const ReviewerYeye = () => {
     <article className='question'>
       <header>
         <h2>
-          Ayesha: <span>{deck}</span>{' '}
+          Moiera: <span>{deck}</span>{' '}
         </h2>
         <h3>
           Total Questions: <span>{questions.length && questions.length}</span>{' '}
