@@ -5,6 +5,7 @@ import Moimoi from './comps/Moimoi';
 import ReviewerMoimoi from './comps/ReviewerMoimoi';
 import ReviewerYeye from './comps/ReviewerYeye';
 import Yeye from './comps/Yeye';
+import Error from './comps/Error';
 import './App.css';
 import NavButtons from './comps/NavButtons';
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route exact path='/moimoi' component={Moimoi} />
           <Route path='/review/yeye/:deck' component={ReviewerYeye} />
           <Route path='/review/moimoi/:deck' component={ReviewerMoimoi} />
+          <Route path='*' component={Error} />
         </Switch>
         <NavButtons />
       </BrowserRouter>

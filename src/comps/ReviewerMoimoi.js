@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import Loading from './Loading';
 
 const gsheetID = process.env.REACT_APP_GSHEET_ID;
 const gsheetNum = 2;
-
 const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
 
 const ReviewerYeye = () => {
@@ -35,6 +35,10 @@ const ReviewerYeye = () => {
     setScore(score - 2);
     setIsShown(false);
   };
+
+  if (isPending) {
+    return <Loading />;
+  }
 
   return (
     <article className='question'>
