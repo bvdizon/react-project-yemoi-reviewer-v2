@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import Loading from './Loading';
@@ -9,8 +9,7 @@ const gsheetNum = 2;
 const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
 
 const Yeye = () => {
-  const { data, isPending, error } = useFetch(url);
-  const [num, setNum] = useState('1');
+  const { data, isPending } = useFetch(url);
 
   let decks = [];
 

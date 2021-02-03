@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import Loading from './Loading';
-import NavButtons from './NavButtons';
 
 const gsheetID = process.env.REACT_APP_GSHEET_ID;
 const gsheetNum = process.env.REACT_APP_GSHEET_NUM;
@@ -10,11 +9,9 @@ const gsheetNum = process.env.REACT_APP_GSHEET_NUM;
 const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
 
 const Yeye = () => {
-  const { data, isPending, error } = useFetch(url);
-  const [num, setNum] = useState('1');
+  const { data, isPending } = useFetch(url);
 
   let decks = [];
-
   if (data) {
     decks = [...new Set(data.feed.entry.map((item) => item.gsx$deck.$t))];
   }

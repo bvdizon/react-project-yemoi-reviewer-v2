@@ -10,7 +10,7 @@ const gsheetNum = process.env.REACT_APP_GSHEET_NUM;
 const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
 
 const ReviewerYeye = () => {
-  const { data, isPending, error } = useFetch(url);
+  const { data, isPending } = useFetch(url);
   const { deck } = useParams();
 
   // component state values
