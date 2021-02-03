@@ -1,11 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Menu from './comps/Menu';
-import Moimoi from './comps/Moimoi';
-import ReviewerMoimoi from './comps/ReviewerMoimoi';
-import ReviewerYeye from './comps/ReviewerYeye';
-import Yeye from './comps/Yeye';
+import Reviewer from './comps/Reviewer';
 import Error from './comps/Error';
+import Questions from './comps/Questions';
 import './App.css';
 import NavButtons from './comps/NavButtons';
 
@@ -15,10 +13,8 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Menu} />
-          <Route exact path='/yeye' component={Yeye} />
-          <Route exact path='/moimoi' component={Moimoi} />
-          <Route path='/review/yeye/:deck' component={ReviewerYeye} />
-          <Route path='/review/moimoi/:deck' component={ReviewerMoimoi} />
+          <Route exact path='/reviewer' component={Reviewer} />
+          <Route exact path='/questions/:deck' component={Questions} />
           <Route path='*' component={Error} />
         </Switch>
         <NavButtons />

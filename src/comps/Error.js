@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Error = () => {
   return (
     <div>
-      <h3>Page not Found.</h3>
-      <button>Back to Home</button>
+      <h1 className='my-lg'>Page NOT Found.</h1>
+      <Link to='/' className='btn'>
+        Go to Homepage
+      </Link>
     </div>
   );
 };

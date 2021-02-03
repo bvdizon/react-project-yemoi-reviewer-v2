@@ -170,7 +170,6 @@ body {
   cursor: pointer;
   color: var(--color-theme-d1);
   display: inline-block;
-  transition: background-color ease 0.2s;
 }
 
 .question .buttons button:hover,

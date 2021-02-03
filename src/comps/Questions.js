@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 import Loading from './Loading';
 
-const gsheetID = process.env.REACT_APP_GSHEET_ID;
-const gsheetNum = process.env.REACT_APP_GSHEET_NUM;
-
-const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
-
 const ReviewerYeye = () => {
+  const { sheetNum, owner } = useHistory().location.state;
+  const gsheetID = process.env.REACT_APP_GSHEET_ID;
+  const gsheetNum = sheetNum;
+  const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
   const { data, isPending } = useFetch(url);
   const { deck } = useParams();
 
@@ -43,8 +42,8 @@ const ReviewerYeye = () => {
   return (
     <article className='question'>
       <header>
-        <h2>
-          Ayesha: <span>{deck}</span>{' '}
+        <h2 style={{ textTransform: 'capitalize' }}>
+          {owner}: <span>{deck}</span>{' '}
         </h2>
         <h3>
           Total Questions: <span>{questions.length && questions.length}</span>{' '}

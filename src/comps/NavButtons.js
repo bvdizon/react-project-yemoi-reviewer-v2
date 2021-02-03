@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaHome, FaTasks } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const NavButtons = () => {
+  const history = useHistory();
   return (
     <nav className='navButtons'>
       <Link to='/'>
