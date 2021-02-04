@@ -29,7 +29,7 @@ body {
 .reviewerApp {
   background-color: azure;
   text-align: center;
-  padding: 30px 0;
+  padding: 30px 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ body {
 
 .navButtons {
   font-size: 30px;
-  margin: 30px 0;
+  padding: 30px 0;
 }
 .navButtons a {
   margin: 15px 5px;
