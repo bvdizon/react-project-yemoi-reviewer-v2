@@ -4,7 +4,7 @@ import useFetch from '../hooks/useFetch';
 import Loading from './Loading';
 
 const gsheetID = process.env.REACT_APP_GSHEET_ID;
-const gsheetNum = process.env.REACT_APP_GSHEET_NUM;
+const gsheetNum = 1;
 
 const url = `https://spreadsheets.google.com/feeds/list/${gsheetID}/${gsheetNum}/public/values?alt=json`;
 
@@ -17,9 +17,8 @@ const Yeye = () => {
   }
 
   return (
-    <>
+    <section className='collection-menu'>
       <h1 className='my-lg'>Ayesha's Review Topics</h1>
-      <div className='underline'></div>
       <div className='collection'>
         {isPending && <Loading />}
 
@@ -32,7 +31,7 @@ const Yeye = () => {
             );
           })}
       </div>
-    </>
+    </section>
   );
 };
 

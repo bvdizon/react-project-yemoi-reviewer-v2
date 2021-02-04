@@ -1,0 +1,61 @@
+// Reviewer App;
+.reviewerApp {
+  background-color: azure;
+
+  text-align: center;
+  padding: 30px 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+  }
+}
+
+.navButtons {
+  font-size: 30px;
+  margin: 30px 0;
+
+  a {
+    margin: 15px 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reviewerApp {
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 80vh;
+
+    margin: 80px auto;
+  }
+
+  .menu {
+    div {
+      display: block;
+    }
+
+    .btn {
+      padding: 20px 50px;
+      margin: 10px;
+    }
+  }
+
+  .navButtons {
+    text-align: left;
+    margin-left: 30px;
+  }
+}

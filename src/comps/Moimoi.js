@@ -12,15 +12,13 @@ const Yeye = () => {
   const { data, isPending } = useFetch(url);
 
   let decks = [];
-
   if (data) {
     decks = [...new Set(data.feed.entry.map((item) => item.gsx$deck.$t))];
   }
 
   return (
-    <>
+    <section className='collection-menu'>
       <h1 className='my-lg'>Moiera's Review Topics</h1>
-      <div className='underline'></div>
       <div className='collection'>
         {isPending && <Loading />}
 
@@ -33,7 +31,7 @@ const Yeye = () => {
             );
           })}
       </div>
-    </>
+    </section>
   );
 };
 
